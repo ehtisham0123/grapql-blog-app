@@ -2,9 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
-import { UserModule } from './user/user.module';
 import { PrismaModule } from './prisma/prisma.module';
-import { CustomerModule } from './customer/customer.module';
 
 import config from './configs/config';
 import { ServeStaticModule } from '@nestjs/serve-static';
@@ -22,9 +20,7 @@ import { ThrottlerModule } from '@nestjs/throttler';
       ttl: 60000,
       limit: 10,
     }]),
-    UserModule,
     PrismaModule,
-    CustomerModule,
     AuthModule
   ],
   controllers: [AppController],
