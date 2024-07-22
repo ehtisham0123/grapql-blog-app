@@ -2,17 +2,10 @@ import { Config } from './config.interface';
 
 const config: Config = {
   nest: {
-    port: 8000,
+    port: 5000,
   },
   cors: {
     enabled: true,
-  },
-  swagger: {
-    enabled: true,
-    title: 'Taste Maker Api',
-    description: 'Rest api for Taste maker',
-    version: '1',
-    path: 'api',
   },
   security: {
     // expiresIn: '2m',

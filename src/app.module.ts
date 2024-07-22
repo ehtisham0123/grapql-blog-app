@@ -7,7 +7,6 @@ import { PrismaModule } from './prisma/prisma.module';
 import config from './configs/config';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
-import { AuthModule } from './auth/auth.module';
 import { ThrottlerModule } from '@nestjs/throttler';
 @Module({
   imports: [
@@ -21,7 +20,6 @@ import { ThrottlerModule } from '@nestjs/throttler';
       limit: 10,
     }]),
     PrismaModule,
-    AuthModule
   ],
   controllers: [AppController],
   providers: [AppService],

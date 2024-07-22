@@ -1,6 +1,5 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 
@@ -14,21 +13,6 @@ async function bootstrap() {
     const configService = app.get(ConfigService);
     const nestConfig = configService.get('nest');
     const corsConfig = configService.get('cors');
-    const swaggerConfig = configService.get('swagger');
-
-    // Swagger Api
-    if (swaggerConfig.enabled) {
-      const options = new DocumentBuilder()
-        .setTitle('Taste Maker API')
-        .setDescription('The Taste Maker API description')
-        .setVersion('1.0')
-        .addTag('Taste Maker')
-        .addBearerAuth()
-        .build();
-      const document = SwaggerModule.createDocument(app, options);
-
-      SwaggerModule.setup(swaggerConfig.path || 'api', app, document);
-    }
 
     // Cors
     if (corsConfig.enabled) {
