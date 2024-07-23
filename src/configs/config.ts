@@ -12,6 +12,12 @@ const config: Config = {
     expiresIn: '7d',
     refreshIn: '7d',
     bcryptSaltOrRound: 10,
+  }, 
+   graphql: {
+    playgroundEnabled: true,
+    debug: true,
+    schemaDestination: './src/schema.graphql',
+    sortSchema: true,
   },
 };
 

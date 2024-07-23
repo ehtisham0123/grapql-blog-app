@@ -1,0 +1,41 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Blog {
+  """Description of the blog"""
+  description: String!
+
+  """Id of the Blog"""
+  id: Int!
+
+  """Title of the blog"""
+  title: String!
+}
+
+input CreateBlogInput {
+  """Description of the blog"""
+  description: String!
+
+  """Title of the blog"""
+  title: String!
+}
+
+type Mutation {
+  createBlog(createBlogInput: CreateBlogInput!): Blog!
+  removeBlog(id: Int!): Blog!
+  updateBlog(id: Int!, updateBlogInput: UpdateBlogInput!): Blog!
+}
+
+type Query {
+  blog(id: Int!): Blog!
+  blogs: [Blog!]!
+}
+
+input UpdateBlogInput {
+  """Description of the blog"""
+  description: String
+
+  """Title of the blog"""
+  title: String
+}

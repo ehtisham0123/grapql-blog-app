@@ -1,0 +1,51 @@
+
+query {
+  blogs {
+    id
+    title
+    description
+    exampleField
+  }
+}
+
+
+query {
+  blog(id: 1) {
+    id
+    title
+    description
+    exampleField
+  }
+}
+
+
+mutation {
+  updateBlog(id: 1,updateBlogInput: {
+    title: "Updated Blog Title",
+    description: "Updated description of the blog",
+  }) {
+    id
+    title
+    description
+  }
+}
+
+
+mutation {
+  createBlog(createBlogInput: {
+    title: "New Blog Title",
+    description: "Description of the new blog",
+  }) {
+    id
+    title
+    description
+  }
+}
+
+mutation {
+  removeBlog(id: 1) {
+    id
+    title
+    description
+  }
+}
